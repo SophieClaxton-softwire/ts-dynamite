@@ -61,8 +61,6 @@ class Bot {
             this.roundsOfDynamite--;
         }
     
-
-
         return choice;
     }
 }
