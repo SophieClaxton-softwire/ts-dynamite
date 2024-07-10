@@ -25,8 +25,6 @@ class Bot {
     }
 
     makeMove(gamestate: Gamestate): BotSelection {
-        this.discoveryChance += (Math.random() - 0.5) / 20;
-
         if (gamestate.rounds.length < 2) {
             this.roundsOfDynamite--;
             return 'D';
@@ -51,7 +49,7 @@ class Bot {
 
         let discoveryMoves = [];
         this.normalMoves.forEach(move => discoveryMoves.push(move))
-        for (let i = 0; i < Math.round(Math.log(this.roundsOfDynamite) / Math.log(4) * Math.max(1, Math.log10(gamestate.rounds.length))); i++) {
+        for (let i = 0; i < Math.round(Math.log(this.roundsOfDynamite) / Math.log(4)); i++) {
             discoveryMoves.push('D');
         }
 
@@ -63,6 +61,8 @@ class Bot {
             this.roundsOfDynamite--;
         }
     
+
+
         return choice;
     }
 }

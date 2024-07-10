@@ -2,7 +2,7 @@ import { Gamestate, BotSelection } from "../models/gamestate";
 
 class Bot {
     private maxDynamites = 100;
-    private window = 5;
+    private window = 2;
     private responseDelay = 0;
     private selectionDict = {
         0: 'R',
